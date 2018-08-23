@@ -1,0 +1,15 @@
+@import 'abstract/variables';
+
+@import 'base/animation';
+@import 'base/base';
+@import 'base/typography';
+
+@import 'pages/home';
+
+h1 {
+    color: red;
+}
+
+h2 {
+    color: black;
+}
