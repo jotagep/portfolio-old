@@ -66,6 +66,7 @@
         margin-bottom: 1.8rem;
     }
     &__link {
+        position: relative;
         text-decoration: none;
         color: $color-grey-dark-2;
         &::after,
@@ -88,6 +89,22 @@
         &:hover::before {
             transform: translateX(0);
             opacity: 1;
+        }
+
+        & span::before{
+            height: 4px;
+            width: 90%;
+            content: "";
+            position: absolute;
+            transform: translate(3rem, 3rem);
+            opacity: 0;
+            background-color: $color-primary;
+            transition: opacity .2s, transform .3s ease-in-out;
+        }
+
+        &:hover span::before {
+            opacity: 1;
+            transform: translate(-1rem, 3rem);
         }
     }
     &__link span {
