@@ -5,12 +5,55 @@
     align-items: center;
     justify-content: center;
 
-    &__box{
+    &__menu {
+        position: absolute;
+        top: 4rem;
+        right: 6rem;
+        width: 6rem;
+        height: 6rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        &__btn {
+            position: relative;
+            width: 3rem;
+        
+            &,
+            &::before,
+            &::after {
+                height: 2px;
+                display: inline-block;
+                transition: width .2s;
+                background-color: $color-white;
+            }
+            &::before {
+                content: "";
+                width: 2rem;
+                position: absolute;
+                left: 0;
+                top: -.8rem;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 1.8rem;
+                top: .8rem;
+            }
+        }
+
+        &:hover &__btn::before,
+        &:hover &__btn::after {
+            width: 3rem;
+        }
+    }
+
+    &__box {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
     &__btn {
         margin-top: 5rem;
         padding: 2.5rem 6.5rem;
@@ -19,21 +62,18 @@
         font-size: 1.8rem;
         color: $color-white;
         transition: all .3s ease;
-
-        &:hover{
+        &:hover {
             background-color: $color-primary;
             color: $color-grey-dark;
             border: 5px solid $color-primary;
         }
-
-        & i{
+        & i {
             font-size: 2.6rem;
             vertical-align: bottom;
             margin-left: 1rem;
             transition: transform .3s ease;
         }
-
-        &:hover i{
+        &:hover i {
             transform: rotate(90deg);
         }
     }
