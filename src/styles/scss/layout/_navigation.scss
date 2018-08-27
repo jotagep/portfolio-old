@@ -5,7 +5,7 @@
     justify-content: center;
     z-index: 10;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     position: fixed;
     background-color: $color-grey-light;
     opacity: 0;
@@ -69,6 +69,7 @@
         position: relative;
         text-decoration: none;
         color: $color-grey-dark-2;
+        z-index: 2;
         &::after,
         &::before {
             display: inline-block;
@@ -93,12 +94,13 @@
 
         & span::before{
             height: 4px;
-            width: 90%;
+            width: 85%;
             content: "";
             position: absolute;
             transform: translate(3rem, 3rem);
             opacity: 0;
-            background-color: $color-primary;
+            z-index: 1;
+            background-color: #ef7b7b;
             transition: opacity .2s, transform .3s ease-in-out;
         }
 
