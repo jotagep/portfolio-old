@@ -1,26 +1,73 @@
-.navigation{
+.navigation {
     display: flex;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100%;
     z-index: 10;
+    height: 100vh;
+    width: 100vw;
     position: fixed;
     background-color: $color-grey-light;
-    transform: translateX(100%);
+    opacity: 0;
+
+    transition: opacity .3s, visibility .3s;
+
+    &.open {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__close {
+        position: absolute;
+        top: 4rem;
+        right: 6rem;
+        width: 6rem;
+        height: 6rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 20;
+        font-size: 4rem;
+        color: $color-grey-dark-2;
+
+        &::after {
+            content: 'CLOSE';
+            display: block;
+            font-size: 1.4rem;
+            color: black;
+            z-index: 20;
+            opacity: 0;
+            transform: translateY(-3rem);
+            transition: transform .3s, opacity .2s;
+        }
+
+        &:hover::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &__nav {
+        z-index: 20;
+        transform: translateX(-100vw);
+        opacity: 0;
+        transition: transform .8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity .3s;
+    }
+
+    &.open &__nav{
+        opacity: 1;
+        transform: translateX(0);
+    }
 
     &__list {
         list-style: none;
     }
-
     &__item {
-        margin-bottom: 1.8rem;    
+        margin-bottom: 1.8rem;
     }
-
     &__link {
         text-decoration: none;
         color: $color-grey-dark-2;
-
         &::after,
         &::before {
             display: inline-block;
@@ -28,27 +75,23 @@
             opacity: 0;
             transition: transform 0.3s, opacity 0.2s;
         }
-
         &::before {
             content: '[';
             transform: translateX(3rem);
         }
-
         &::after {
             content: ']';
             margin-left: 1.8rem;
             transform: translateX(-3rem);
         }
-
         &:hover::after,
-        &:hover::before
-         {
+        &:hover::before {
             transform: translateX(0);
             opacity: 1;
         }
     }
-
     &__link span {
         margin-right: 1.8rem;
     }
+
 }

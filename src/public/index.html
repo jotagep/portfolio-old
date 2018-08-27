@@ -9,13 +9,15 @@
     <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
 </head>
 
 <body>
     <div class="navigation">
-        <button class="navigation__menu"></button>
-        <div class="navigation__background">&nbsp;</div>
+        <button class="navigation__close" aria-label="Menu">
+            <i class="fas fa-times"></i>
+        </button>
         <nav class="navigation__nav">
             <ul class="navigation__list">
                 <li class="navigation__item heading-primary">
@@ -38,22 +40,23 @@
         </nav>
     </div>
     <header class="header">
-        <div class="header__particles" id="particles"></div>
         <button class="header__menu" aria-label="Menu">
             <span class="header__menu__btn"></span>
         </button>
+        <div class="header__particles" id="particles"></div>
         <div class="header__box">
             <h1 class="heading-primary heading-primary--main">
                 Hello, I’m 
                 <span class="heading-primary heading-primary--highlight">
                     [
-                    <span id="jotagep"></span> ]</span>. 
+                    <span id="jotagep"></span> ]</span>.
             </h1>
             <h1 class="heading-primary heading-primary--main">
-                    I’m front end web developer.
+                I’m front end web developer.
             </h1>
             <a class="header__btn" tabindex="0" aria-label="View my work">
-                View my work <i class="fas fa-angle-right"></i>
+                View my work
+                <i class="fas fa-angle-right"></i>
             </a>
         </div>
     </header>
