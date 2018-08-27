@@ -1,0 +1,40 @@
+.header {
+    height: 100vh;
+    background-color: $color-grey-dark-2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__btn {
+        margin-top: 5rem;
+        padding: 2.5rem 6.5rem;
+        border: 5px solid $color-white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.8rem;
+        color: $color-white;
+        transition: all .3s ease;
+
+        &:hover{
+            background-color: $color-primary;
+            color: $color-grey-dark;
+            border: 5px solid $color-primary;
+        }
+
+        & i{
+            font-size: 2.6rem;
+            vertical-align: bottom;
+            margin-left: 1rem;
+            transition: transform .3s ease;
+        }
+
+        &:hover i{
+            transform: rotate(90deg);
+        }
+    }
+}

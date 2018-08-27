@@ -1,15 +1,11 @@
 @import 'abstract/variables';
+@import 'abstract/mixins';
 
 @import 'base/animation';
 @import 'base/base';
 @import 'base/typography';
 
+@import 'layout/header';
+@import 'layout/navigation';
+
 @import 'pages/home';
-
-h1 {
-    color: red;
-}
-
-h2 {
-    color: black;
-}
