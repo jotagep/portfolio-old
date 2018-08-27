@@ -38,7 +38,8 @@
         </nav>
     </div>
     <header class="header">
-        <button class="header__menu">
+        <div class="header__particles" id="particles"></div>
+        <button class="header__menu" aria-label="Menu">
             <span class="header__menu__btn"></span>
         </button>
         <div class="header__box">
@@ -46,12 +47,12 @@
                 Hello, I’m 
                 <span class="heading-primary heading-primary--highlight">
                     [
-                    <span id="jotagep">jotagep</span> ]</span>. 
+                    <span id="jotagep"></span> ]</span>. 
             </h1>
             <h1 class="heading-primary heading-primary--main">
                     I’m front end web developer.
             </h1>
-            <a class="header__btn">
+            <a class="header__btn" tabindex="0" aria-label="View my work">
                 View my work <i class="fas fa-angle-right"></i>
             </a>
         </div>

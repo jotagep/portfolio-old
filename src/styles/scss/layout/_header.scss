@@ -1,9 +1,17 @@
 .header {
     height: 100vh;
-    background-color: $color-grey-dark-2;
+    // background-color: $color-grey-dark-2;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &__particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: $color-grey-dark-2;
+    }
 
     &__menu {
         position: absolute;
@@ -14,6 +22,7 @@
         background-color: transparent;
         border: none;
         cursor: pointer;
+        z-index: 2;
 
         &__btn {
             position: relative;
@@ -50,6 +59,7 @@
     }
 
     &__box {
+        z-index: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
