@@ -10,7 +10,7 @@
         width: 100%;
         height: 100%;
         z-index: 1;
-        background-color: $color-grey-dark-2;
+        background-image: linear-gradient(to bottom left, $color-grey-dark, $color-grey-dark-2);
     }
 
     &__menu {
@@ -66,8 +66,8 @@
     }
     &__btn {
         margin-top: 5rem;
-        padding: 2.5rem 6.5rem;
-        border: 5px solid $color-white;
+        padding: 1.5em 4rem;
+        border: 3px solid $color-white;
         font-family: 'Montserrat', sans-serif;
         font-size: 1.8rem;
         color: $color-white;
@@ -75,7 +75,7 @@
         &:hover {
             background-color: $color-primary;
             color: $color-grey-dark;
-            border: 5px solid $color-primary;
+            border: 3px solid $color-primary;
         }
         & i {
             font-size: 2.6rem;

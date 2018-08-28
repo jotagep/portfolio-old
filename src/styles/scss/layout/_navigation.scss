@@ -97,7 +97,7 @@
             width: 85%;
             content: "";
             position: absolute;
-            transform: translate(3rem, 3rem);
+            transform: translate(3rem, 2.5rem);
             opacity: 0;
             z-index: 1;
             background-color: #ef7b7b;
@@ -106,7 +106,7 @@
 
         &:hover span::before {
             opacity: 1;
-            transform: translate(-1rem, 3rem);
+            transform: translate(-1rem, 2.5rem);
         }
     }
     &__link span {

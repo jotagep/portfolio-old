@@ -1,6 +1,8 @@
 .row {
+    display: flex;
+    width: 100%;
     max-width: $grid-width;
-    margin: 0 auto;
+    justify-content: center;
 
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
@@ -17,26 +19,32 @@
     }
 
     .col-1-of-2 {
+        flex: 1;
         width: calc((100% - #{$gutter-horizontal}) / 2);
     }
 
     .col-1-of-3 {
+        flex: 1;
         width: calc((100% - #{$gutter-horizontal} * 2) / 3);
     }
 
     .col-2-of-3 {
+        flex: 1;
         width: calc(2 * ((100% - #{$gutter-horizontal} * 2)/ 3) + #{$gutter-horizontal});
     }
 
     .col-1-of-4 {
+        flex: 1;
         width: calc((100% - #{$gutter-horizontal} * 3) / 4);
     }
 
     .col-2-of-4 {
+        flex: 1;
         width: calc(((100% - #{$gutter-horizontal} * 3) / 4) * 2 + #{$gutter-horizontal});
     }
 
     .col-3-of-4 {
+        flex: 1;
         width: calc(((100% - #{$gutter-horizontal} * 3) / 4) * 3 + 2 * #{$gutter-horizontal});
     }
 }

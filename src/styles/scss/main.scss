@@ -5,6 +5,12 @@
 @import 'base/base';
 @import 'base/typography';
 
+@import 'components/header-bar';
+@import 'components/card';
+@import 'components/navbar';
+@import 'components/profile';
+@import 'components/skills';
+
 @import 'layout/grid';
 @import 'layout/header';
 @import 'layout/navigation';

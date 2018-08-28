@@ -1,14 +1,13 @@
-
 body {
     font-family: $raleway-font;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 400;
     color: $color-grey;
 }
 
 .heading-primary{
     font-family: $montserrat-font;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 400;
 
     &--main {
@@ -26,13 +25,13 @@ body {
 
 .heading-secondary {
     font-family: $montserrat-font;
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: $color-grey-dark-2;
 }
 
 .heading-tertiary {
     font-family: $raleway-font;
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: $color-grey;
 }

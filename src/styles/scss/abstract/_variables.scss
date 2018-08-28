@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:300,400,700');
 
 // Colors
 $color-primary: #F0DB4F;
@@ -26,6 +26,6 @@ $raleway-font: 'Raleway', sans-serif;
 
 // Grid
 $grid-width: 114rem;
-$gutter-vertical: 8rem;
-$gutter-vertical-small: 6rem;
-$gutter-horizontal: 6rem;
+$gutter-vertical: 5rem;
+$gutter-vertical-small: 4rem;
+$gutter-horizontal: 1.6rem;

@@ -1,6 +1,7 @@
 //JS scripts
 import Typed from 'typed.js';
 import 'particles.js';
+import 'waypoints/lib/noframework.waypoints';
 
 // DOM elements
 import { elements } from './views/base';
@@ -32,4 +33,17 @@ const typed = new Typed('#jotagep', {
 
 particlesJS.load('particles', 'assets/particlesjs-config.json', () => {
     console.log('Particle JS - loaded');
+})
+
+//NAVBAR
+
+document.addEventListener('DOMContentLoaded', () => {
+    //
+})
+
+const waypoint = new Waypoint({
+    element: elements.navbar,
+    handler: function(direction) {
+      direction == 'up' ? this.element.classList.remove('navbar--sticky') : this.element.classList.add('navbar--sticky');
+    }
 })
