@@ -6,6 +6,7 @@ export const elements = {
     nav: document.querySelector('.navigation'),
     nav_items: document.querySelectorAll('.navigation__item'),
     navbar: document.querySelector('#navbar'),
+    navbar_items: document.querySelectorAll('.navbar__item'),
     section_about: document.querySelector('#section-about'),
     section_projects: document.querySelector('#section-projects'),
 }

@@ -59,6 +59,7 @@
         color: $color-white;
         font-family: $raleway-font;
         transition: all .3s;
+        cursor: pointer;
 
         &--active {
             background-color: $color-primary;

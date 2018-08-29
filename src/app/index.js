@@ -2,6 +2,7 @@
 import Typed from 'typed.js';
 import 'particles.js';
 import 'waypoints/lib/noframework.waypoints';
+import smoothScroll from 'smoothscroll';
 
 // DOM elements
 import {
@@ -29,7 +30,8 @@ elements.nav_items.forEach( el => {
         window.scrollTo({
             top: document.querySelector(`${el.dataset.dest}`).offsetTop
         })
-    })
+        //smoothScroll(document.querySelector(`${el.dataset.dest}`), 1200);
+    });
 });
 
 // HEADER CONTROLLER
@@ -53,16 +55,23 @@ particlesJS.load('particles', 'assets/particlesjs-config.json', () => {
 })
 
 elements.header_btn.addEventListener('click', () => {
-    window.scrollTo({
-        top: elements.section_projects.offsetTop
-    })
-})
+    // window.scrollTo({
+    //     top: elements.section_projects.offsetTop
+    // })
+    smoothScroll(elements.section_projects, 1000);
+});
 
 //NAVBAR
 
 // document.addEventListener('DOMContentLoaded', () => {
 //    
 // })
+
+const removeActive = () => {
+    document.querySelectorAll('.navbar__item--active').forEach((el) => {
+        el.classList.remove('navbar__item--active');
+    })
+}
 
 const navbar_wp = new Waypoint({
     element: elements.navbar,
@@ -77,22 +86,12 @@ const navbar_wp = new Waypoint({
     }
 })
 
-const removeActive = () => {
-    document.querySelectorAll('.navbar__item--active').forEach((el) => {
-        el.classList.remove('navbar__item--active');
+elements.navbar_items.forEach( el => {
+    el.addEventListener('click', () => {
+        window.scrollTo({
+            top: document.querySelector(`${el.dataset.dest}`).offsetTop
+        })
     })
-}
+});
 
 // ABOUT
-
-const about_wp = new Waypoint({
-    element: elements.section_about,
-    handler: function (direction) {
-        if (direction == 'down') {
-            removeActive();
-            const item = document.querySelector('#about');
-            item.classList.add('navbar__item--active');
-            console.log(item);
-        }
-    }
-});

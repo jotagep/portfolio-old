@@ -30,6 +30,7 @@
   "dependencies": {
     "lodash": "^4.17.10",
     "particles.js": "^2.0.0",
+    "smoothscroll": "^0.4.0",
     "typed.js": "^2.0.9",
     "waypoints": "^4.0.1"
   }
