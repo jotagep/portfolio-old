@@ -20,20 +20,20 @@
         </button>
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item heading-primary">
-                    <a href="#" class="navigation__link">
+                <li class="navigation__item heading-primary" data-dest="#section-about">
+                    <a class="navigation__link">
                         <span>01.</span>About</a>
                 </li>
-                <li class="navigation__item heading-primary">
-                    <a href="#" class="navigation__link">
+                <li class="navigation__item heading-primary" data-dest="#section-projects">
+                    <a class="navigation__link">
                         <span>02.</span>Project</a>
                 </li>
-                <li class="navigation__item heading-primary">
-                    <a href="#" class="navigation__link">
+                <li class="navigation__item heading-primary" data-dest="#section-blog">
+                    <a class="navigation__link">
                         <span>03.</span>Blog</a>
                 </li>
-                <li class="navigation__item heading-primary">
-                    <a href="#" class="navigation__link">
+                <li class="navigation__item heading-primary" data-dest="#section-contact">
+                    <a class="navigation__link">
                         <span>04.</span>Contact</a>
                 </li>
             </ul>
@@ -54,7 +54,7 @@
             <h1 class="heading-primary heading-primary--main">
                 I’m front end web developer.
             </h1>
-            <a class="header__btn" tabindex="0" aria-label="View my work">
+            <a class="header__btn" tabindex="0" aria-label="View my work" role="button">
                 View my work
                 <i class="fas fa-angle-right"></i>
             </a>
@@ -73,11 +73,11 @@
                 </button>
                 <div class="navbar__collapse">
                     <ul class="navbar__nav">
-                        <li class="navbar__item navbar__item--active">
-                            <a href="#" class="navbar__link">ABOUT</a>
+                        <li class="navbar__item" id="about">
+                            <a href="#section-about" class="navbar__link">ABOUT</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="#" class="navbar__link">PROJECTS</a>
+                            <a href="#section-projects" class="navbar__link">PROJECTS</a>
                         </li>
                         <li class="navbar__item">
                             <a href="#" class="navbar__link">BLOG</a>
@@ -90,7 +90,7 @@
             </div>
         </nav>
 
-        <section class="section-about">
+        <section class="section-about" id="section-about">
             <h2 class="heading-secondary">About me</h2>
             <div class="header-bar"></div>
             <div class="row">
@@ -207,6 +207,10 @@
             </div>
         </section>
         
+        <section class="section-projects" id="section-projects">
+            <h2 class="heading-secondary">Projects</h2>
+            <div class="header-bar"></div>            
+        </section>
     </main>
 </body>
 
