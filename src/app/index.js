@@ -18,33 +18,14 @@ import Projects from './models/Projects';
 import * as projectsView from './views/projectsView';
 
 
-// NAVIGATION CONTROLLER
+// NAVIGATION 
 
 const closeNav = () => {
     elements.nav.classList.remove('open');
     document.body.style.overflowY = 'auto';
 }
 
-elements.closeNav.addEventListener('click', () => {
-    closeNav();
-});
-
-elements.nav_items.forEach( el => {
-    el.addEventListener('click', () => {
-        closeNav();
-        window.scrollTo({
-            top: document.querySelector(`${el.dataset.dest}`).offsetTop
-        })
-        //smoothScroll(document.querySelector(`${el.dataset.dest}`), 1200);
-    });
-});
-
-// HEADER CONTROLLER
-
-elements.openNav.addEventListener('click', () => {
-    elements.nav.classList.add('open');
-    document.body.style.overflowY = 'hidden';
-})
+// HEADER 
 
 const typed = new Typed('#jotagep', {
     showCursor: false,
@@ -59,24 +40,7 @@ particlesJS.load('particles', 'assets/particlesjs-config.json', () => {
     console.log('Particle JS - loaded');
 })
 
-elements.header_btn.addEventListener('click', () => {
-    // window.scrollTo({
-    //     top: elements.section_projects.offsetTop
-    // })
-    smoothScroll(elements.section_projects, 1000);
-});
-
 //NAVBAR
-
-// document.addEventListener('DOMContentLoaded', () => {
-//    
-// })
-
-const removeActive = () => {
-    document.querySelectorAll('.navbar__item--active').forEach((el) => {
-        el.classList.remove('navbar__item--active');
-    })
-}
 
 const navbar_wp = new Waypoint({
     element: elements.navbar,
@@ -91,28 +55,10 @@ const navbar_wp = new Waypoint({
     }
 })
 
-elements.navbar_items.forEach( el => {
-    el.addEventListener('click', () => {
-        window.scrollTo({
-            top: document.querySelector(`${el.dataset.dest}`).offsetTop
-        })
-    })
-});
-
 // ABOUT
 
 
 // PROJECTS
-
-
-
-elements.projects_filters.forEach( el => {
-    el.addEventListener('click', () => {
-        document.querySelector('.projects__filters--active').classList.remove('projects__filters--active');
-        el.classList.add('projects__filters--active');
-        shuffleProject.filter(`${el.dataset.filter}`);
-    })
-})
 
 const projects = new Projects();
 
@@ -125,3 +71,50 @@ const shuffleProject = new Shuffle(elements.projects_container, {
     sizer: '.projects__sizer',
     speed: 700
 });
+
+/* 
+----- EVENT HANDLERS (CLICKS) -------------------------------------- 
+*/
+
+// -- Navigation handlers
+elements.closeNav.addEventListener('click', () => {
+    closeNav();
+});
+
+elements.nav_items.forEach( el => {
+    el.addEventListener('click', () => {
+        closeNav();
+        window.scrollTo({
+            top: document.querySelector(`${el.dataset.dest}`).offsetTop
+        })
+        
+    });
+});
+
+// Header handlers
+elements.openNav.addEventListener('click', () => {
+    elements.nav.classList.add('open');
+    document.body.style.overflowY = 'hidden';
+})
+
+elements.header_btn.addEventListener('click', () => {
+    smoothScroll(elements.section_projects, 1000);
+});
+
+// Navbar handlers
+
+elements.navbar_items.forEach( el => {
+    el.addEventListener('click', () => {
+        smoothScroll(document.querySelector(`${el.dataset.dest}`), 1200);
+    })
+});
+
+// Projects handlers
+
+elements.projects_filters.forEach( fil => {
+    fil.addEventListener('click', () => {
+        projectsView.cleanFilter();
+        fil.classList.add('projects__filters--active');
+        shuffleProject.filter(fil.dataset.filter);
+    })
+})

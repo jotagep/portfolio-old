@@ -17,3 +17,7 @@ export const renderProject = (project) => {
     
     elements.projects_container.insertAdjacentHTML('beforeend', markup);
 }
+
+export const cleanFilter = () => {
+    document.querySelector('.projects__filters--active').classList.remove('projects__filters--active');
+}
