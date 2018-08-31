@@ -3,14 +3,19 @@ import Typed from 'typed.js';
 import 'particles.js';
 import 'waypoints/lib/noframework.waypoints';
 import smoothScroll from 'smoothscroll';
+import Shuffle from 'shufflejs';
 
 // DOM elements
-import {
-    elements
-} from './views/base';
+import { elements } from './views/base';
 
 // Styles 
 import '../styles/scss/main.scss';
+
+//Models
+import Projects from './models/Projects';
+
+//Views
+import * as projectsView from './views/projectsView';
 
 
 // NAVIGATION CONTROLLER
@@ -95,3 +100,28 @@ elements.navbar_items.forEach( el => {
 });
 
 // ABOUT
+
+
+// PROJECTS
+
+
+
+elements.projects_filters.forEach( el => {
+    el.addEventListener('click', () => {
+        document.querySelector('.projects__filters--active').classList.remove('projects__filters--active');
+        el.classList.add('projects__filters--active');
+        shuffleProject.filter(`${el.dataset.filter}`);
+    })
+})
+
+const projects = new Projects();
+
+projects.getProjects().forEach( project => {
+    projectsView.renderProject(project);
+});    
+
+const shuffleProject = new Shuffle(elements.projects_container, {
+    itemSelector: '.projects__item',
+    sizer: '.projects__sizer',
+    speed: 700
+});

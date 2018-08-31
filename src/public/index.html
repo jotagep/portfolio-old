@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <!-- Modal Navigation -->
     <div class="navigation">
         <button class="navigation__close" aria-label="Menu">
             <i class="fas fa-times"></i>
@@ -39,6 +40,7 @@
             </ul>
         </nav>
     </div>
+
     <header class="header">
         <button class="header__menu" aria-label="Menu">
             <span class="header__menu__btn"></span>
@@ -54,10 +56,10 @@
             <h1 class="heading-primary heading-primary--main">
                 I’m front end web developer.
             </h1>
-            <a class="header__btn" tabindex="0" aria-label="View my work" role="button">
+            <button class="header__btn">
                 View my work
                 <i class="fas fa-angle-right"></i>
-            </a>
+            </button>
         </div>
     </header>
 
@@ -77,7 +79,7 @@
                             <a class="navbar__link">ABOUT</a>
                         </li>
                         <li class="navbar__item" data-dest="#section-projects">
-                            <a class="navbar__link" >PROJECTS</a>
+                            <a class="navbar__link">PROJECTS</a>
                         </li>
                         <li class="navbar__item" data-dest="#section-blog">
                             <a class="navbar__link">BLOG</a>
@@ -92,7 +94,7 @@
 
         <section class="section-about" id="section-about">
             <h2 class="heading-secondary">About me</h2>
-            <div class="header-bar"></div>
+            <span class="header-bar"></span>
             <div class="row">
                 <div class="col-1-of-3">
                     <div class="card">
@@ -102,7 +104,8 @@
                         <div class="card__body">
                             <h3 class="card__title heading-tertiary">Good Perfomance</h3>
                             <div class="card__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim, non interdum massa cursus
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim,
+                                non interdum massa cursus
                             </div>
                         </div>
                     </div>
@@ -115,7 +118,8 @@
                         <div class="card__body">
                             <h3 class="card__title heading-tertiary">Responsive Design</h3>
                             <div class="card__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim, non interdum massa cursus
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim,
+                                non interdum massa cursus
                             </div>
                         </div>
                     </div>
@@ -128,7 +132,8 @@
                         <div class="card__body">
                             <h3 class="card__title heading-tertiary">Dynamic Data</h3>
                             <div class="card__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim, non interdum massa cursus
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim,
+                                non interdum massa cursus
                             </div>
                         </div>
                     </div>
@@ -141,7 +146,8 @@
                         <div class="profile__body">
                             <h3 class="profile__title heading-tertiary">Who is this 👨‍💻 ?</h3>
                             <div class="profile__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim, non interdum massa cursus Sed tincidunt tristique enim, non interdum massa cursus
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim,
+                                non interdum massa cursus Sed tincidunt tristique enim, non interdum massa cursus
                             </div>
                         </div>
                     </div>
@@ -206,10 +212,50 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="section-projects" id="section-projects">
             <h2 class="heading-secondary">Projects</h2>
-            <div class="header-bar"></div>            
+            <span class="header-bar"></span>
+            <div class="row projects">
+                <ul class="projects__bar">
+                    <li class="projects__filters projects__filters--active" data-filter="">
+                        All
+                    </li>
+                    <li class="projects__filters" data-filter="ANGULAR">
+                        ANGULAR
+                    </li>
+                    <li class="projects__filters" data-filter="NODE">
+                        NODE.JS
+                    </li>
+                    <li class="projects__filters" data-filter="JS">
+                        JavaScript
+                    </li>
+                </ul>
+                <div class="projects__container">
+                    <!-- <figure class="projects__item" data-groups='["ANGULAR"]'>
+                        <img src="assets/img/shap.png" alt="item">
+                        <figcaption class="projects__item--selected">
+                            <h4>Shap Web</h4>
+                            <span>JavaScript + CSS</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="projects__item" data-groups='["ANGULAR"]'>
+                        <img src="assets/img/shap.png" alt="item">    
+                    </figure>
+                    <figure class="projects__item" data-groups='["NODE"]'>
+                        <img src="assets/img/shap.png" alt="item">
+                    </figure>
+                    <figure class="projects__item" data-groups='["NODE"]'>
+                        <img src="assets/img/shap.png" alt="item">
+                    </figure>
+                    <figure class="projects__item" data-groups='["JS"]'>
+                        <img src="assets/img/shap.png" alt="item">
+                    </figure>
+                    <figure class="projects__item" data-groups='["JS"]'>
+                        <img src="assets/img/shap.png" alt="item">
+                    </figure> -->
+                </div>
+            </div>
         </section>
     </main>
 </body>

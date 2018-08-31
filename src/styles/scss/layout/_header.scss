@@ -68,10 +68,12 @@
         margin-top: 5rem;
         padding: 1.5em 4rem;
         border: 3px solid $color-white;
+        background-color: transparent;
         font-family: 'Montserrat', sans-serif;
         font-size: 1.8rem;
         color: $color-white;
         transition: all .3s ease;
+        cursor: pointer;
         &:hover {
             background-color: $color-primary;
             color: $color-grey-dark;

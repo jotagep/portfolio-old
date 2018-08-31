@@ -9,4 +9,6 @@ export const elements = {
     navbar_items: document.querySelectorAll('.navbar__item'),
     section_about: document.querySelector('#section-about'),
     section_projects: document.querySelector('#section-projects'),
+    projects_filters: document.querySelectorAll('.projects__filters'),
+    projects_container: document.querySelector('.projects__container')
 }

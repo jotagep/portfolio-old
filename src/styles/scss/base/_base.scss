@@ -6,6 +6,10 @@
     box-sizing: inherit;
 }
 
+*:focus:hover {
+    outline: none;
+}
+
 html {
     // Defines 1rem is (default 16px)
     font-size: 62.5%; // 1rem = 10px; 10/16 = 62.5%
@@ -14,6 +18,12 @@ html {
 body {  
     box-sizing: border-box;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 ::selection {
