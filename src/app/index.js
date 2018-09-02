@@ -4,6 +4,7 @@ import 'particles.js';
 import 'waypoints/lib/noframework.waypoints';
 import smoothScroll from 'smoothscroll';
 import Shuffle from 'shufflejs';
+
 import "@babel/polyfill";
 
 // DOM elements
@@ -58,7 +59,30 @@ const navbar_wp = new Waypoint({
             elements.section_about.style.marginTop = `60px`;
         }
     }
-})
+});
+
+elements.sections.forEach(function (sec) {
+    new Waypoint({
+        element: sec,
+        handler: function (dir) {
+            const prevWp = this.previous();
+
+            if (dir == 'down') {
+                if (prevWp) {
+                    document.querySelector(`[data-section="#${prevWp.element.id}"]`).classList.remove('navbar__item--active');
+                }
+                document.querySelector(`[data-section="#${this.element.id}"]`).classList.add('navbar__item--active');
+            } else {
+                console.log(dir);
+                document.querySelector(`[data-section="#${this.element.id}"]`).classList.remove('navbar__item--active');
+                if (prevWp) {
+                    document.querySelector(`[data-section="#${prevWp.element.id}"]`).classList.add('navbar__item--active');
+                }                
+            }          
+        },
+        group: 'section'
+    })
+});
 
 // ABOUT
 
@@ -88,7 +112,6 @@ const blogController = async () => {
         blogsView.renderPost(post);
     });
 }
-
 
 /* 
 ----- EVENT HANDLERS (CLICKS) -------------------------------------- 
@@ -132,10 +155,7 @@ elements.closeNav.addEventListener('click', () => {
 elements.nav_items.forEach(el => {
     el.addEventListener('click', () => {
         closeNav();
-        window.scrollTo({
-            top: document.querySelector(`${el.dataset.dest}`).offsetTop
-        })
-
+        smoothScroll(document.querySelector(`${el.dataset.dest}`), 1200);
     });
 });
 
@@ -153,7 +173,7 @@ elements.header_btn.addEventListener('click', () => {
 
 elements.navbar_items.forEach(el => {
     el.addEventListener('click', () => {
-        smoothScroll(document.querySelector(`${el.dataset.dest}`), 1200);
+        smoothScroll(document.querySelector(`${el.dataset.section}`), 1200);
     })
 });
 
@@ -166,6 +186,33 @@ elements.projects_filters.forEach(fil => {
         shuffleProject.filter(fil.dataset.filter);
     })
 })
+
+// Contact form
+
+elements.contact_form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (e.target.checkValidity()) {
+        const data = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            msg: e.target.msg.value
+        }
+
+        // Send email
+        fetch('https://formspree.io/hello@jotagep.com', {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(() => {
+            alertify.success('Success message');
+            // Reset form
+            this.reset();
+        })
+    };
+});
 
 // Footer handlers
 

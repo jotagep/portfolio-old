@@ -5,4 +5,8 @@
     width: 5.5rem;
     height: 3px;
     background-color: $color-grey-dark-2;
+
+    &--contact {
+        background-color: $color-white;
+    }
 }

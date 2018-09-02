@@ -1,0 +1,53 @@
+.contact {
+    &__text {
+        margin-bottom: 3rem;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        & > input:not([type="submit"]),
+        & > textarea {
+            color: $color-grey-light;
+            background-color: $color-grey-dark;
+            border: none;
+            border-bottom: 2px solid $color-grey-dark;
+            letter-spacing: 1px;
+            border-radius: 3px;
+            margin-bottom: .5rem;
+            font-size: 1.4rem;
+            font-family: $raleway-font;
+            width: 100%;
+            padding: 1rem 1.5rem;
+
+            &:focus {
+                outline: none;
+                border-bottom: 2px solid $color-primary;
+            }
+        }
+
+        & > textarea {
+            min-height: 10rem;
+        }
+    }
+
+    &__submit {
+        padding: 1rem 2.5rem;
+        font-size: 1.6rem;
+        margin-top: 1rem;
+        align-self: flex-end;
+        background-color: transparent;
+        border: 2px solid $color-white;
+        color: $color-white;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-grey-dark-2;
+            border: 2px solid $color-primary;
+        }
+    }
+}

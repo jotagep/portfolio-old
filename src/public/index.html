@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -75,16 +75,16 @@
                 </button>
                 <div class="navbar__collapse">
                     <ul class="navbar__nav">
-                        <li class="navbar__item" data-dest="#section-about">
+                        <li class="navbar__item" data-section="#section-about">
                             <a class="navbar__link">ABOUT</a>
                         </li>
-                        <li class="navbar__item" data-dest="#section-projects">
+                        <li class="navbar__item" data-section="#section-projects">
                             <a class="navbar__link">PROJECTS</a>
                         </li>
-                        <li class="navbar__item" data-dest="#section-blog">
+                        <li class="navbar__item" data-section="#section-blog">
                             <a class="navbar__link">BLOG</a>
                         </li>
-                        <li class="navbar__item" data-dest="#section-contact">
+                        <li class="navbar__item" data-section="#section-contact">
                             <a class="navbar__link">CONTACT</a>
                         </li>
                     </ul>
@@ -92,7 +92,7 @@
             </div>
         </nav>
 
-        <section class="section-about" id="section-about">
+        <section class="section section-about" id="section-about">
             <h2 class="heading-secondary">About me</h2>
             <span class="header-bar"></span>
             <div class="row">
@@ -213,7 +213,7 @@
             </div>
         </section>
 
-        <section class="section-projects" id="section-projects">
+        <section class="section section-projects" id="section-projects">
             <h2 class="heading-secondary">Projects</h2>
             <span class="header-bar"></span>
             <div class="row projects">
@@ -242,7 +242,7 @@
                 </div>
             </div>
         </section>
-        <section class="section-blog" id="section-blog">
+        <section class="section section-blog" id="section-blog">
             <h2 class="heading-secondary">Blog</h2>
             <span class="header-bar"></span>
             <div class="row blog__container">
@@ -264,6 +264,21 @@
                 </div> -->
             </div>
             <a href="http://blog.jotagep.com/" class="blog__btn" role="button" target="_blank">Visit blog</a>
+        </section>
+        <section class="section section-contact" id="section-contact">
+            <h2 class="heading-secondary heading-secondary--contact">Contacto</h2>
+            <span class="header-bar header-bar--contact"></span>
+            <div class="contact">
+                <p class="contact__text">
+                    ¿ Tienes algun proyecto en el que podamos trabajor juntos ?
+                </p>
+                <form class="contact__form" id="contact-form">
+                    <input type="text" name="name" placeholder="Nombre" required>
+                    <input type="email" placeholder="tu@email.com" name="email" required>
+                    <textarea name="msg" id="msg" placeholder="Escribe tu mensaje" required></textarea>
+                    <input class="contact__submit" type="submit" value="Enviar">
+                </form>
+            </div>
         </section>
         <footer class="footer">
             <button class="footer__topBtn">

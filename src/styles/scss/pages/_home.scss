@@ -1,26 +1,31 @@
-.section-about {
-    background-color: $color-white;
+.section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 8rem 0;
-}
 
-.section-projects {
-    background-color: $color-grey-light;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8rem 0;    
-}
+    &-about {
+        background-color: $color-white;
+    }
 
-.section-blog {
-    background-color: $color-white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8rem 0;
+    &-projects {
+        background-color: $color-grey-light;
+    }
+
+    &-blog {
+        background-color: $color-white;
+        z-index: 2;
+        @supports (clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%)) or (-webkit-clip-path: polygon(0 0)) {
+            clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+        }
+    }
+
+    &-contact {
+        background-color: $color-grey-dark-2;
+        z-index: 1;
+        color: $color-white;
+        padding: 18rem 0 11rem;
+        margin-top: -10rem;
+    }
 }
