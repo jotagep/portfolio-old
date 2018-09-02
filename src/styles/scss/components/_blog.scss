@@ -1,0 +1,69 @@
+.blog {
+    &__post {
+        overflow: hidden;
+        display: block;
+        padding: .5rem;
+        cursor: pointer;
+        transition: opacity .3s, transform .3s ease-in-out;
+
+        &--fade {
+            opacity: .5;
+        }
+
+        &--hover {
+            transform: translateY(-1rem);
+        }
+    }
+
+    &__header {
+        height: 22rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 0;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 2.5rem;
+    }
+
+    &__date {
+        margin: 1.3rem 0 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    &__bar {
+        width: 7rem;
+        height: 3px;
+        border-radius: 5px;
+        background-color: $color-secondary;
+    }
+
+    &__text {
+        display: -webkit-box;
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &__btn {
+        padding: 2rem 4rem;
+        border: thin solid $color-grey;
+        border-radius: 20px;
+        transition: all .3s; 
+
+        &:hover {
+            box-shadow: 0 .5rem 2rem rgba(0, 0, 0, .1);
+            transform: translateY(-.5rem);
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.footer {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 10rem 0;
+    background-color: $color-grey-dark-2;
+    color: $color-grey-light;
+
+    &__topBtn {
+        position: absolute;
+        top: -4rem;
+        width: 7rem;
+        height: 7rem;
+        background-color: $color-primary;
+        color: $color-grey-dark-2;
+        border: none;
+        border-radius: 20px;
+        font-size: 4rem;
+        cursor: pointer;
+
+        &:hover {
+            animation: pulse 1s infinite;
+        }
+    }
+
+    &__social {
+        display: flex;
+        margin-bottom: 5rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        font-size: 3rem;
+        padding: 1.5rem;
+        background-color: $color-grey;
+        transition: all .3s;
+
+        &:not(:last-child) {
+            margin-right: 3rem;
+        }
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-grey-dark-2;
+        }
+    }
+
+    &__text {
+        width: auto;
+    }
+}

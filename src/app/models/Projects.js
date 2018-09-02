@@ -1,6 +1,6 @@
 export default class Projects {
     constructor() {
-        this.projects = [
+        this.list = [
             {
                 title: 'Shap Web',
                 techs: 'JavaScript + CSS',
@@ -38,9 +38,5 @@ export default class Projects {
                 tags: ['JS']
             },
         ]
-    }
-
-    getProjects() {
-        return this.projects;
     }
 }
