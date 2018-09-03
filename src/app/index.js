@@ -3,6 +3,7 @@ import Typed from 'typed.js';
 import 'particles.js';
 import 'waypoints/lib/noframework.waypoints';
 import smoothScroll from 'smoothscroll';
+import toast from 'toastr';
 import Shuffle from 'shufflejs';
 
 import "@babel/polyfill";
@@ -14,6 +15,7 @@ import {
 
 // Styles 
 import '../styles/scss/main.scss';
+import 'toastr/toastr.scss';
 
 //Models
 import Projects from './models/Projects';
@@ -48,41 +50,46 @@ particlesJS.load('particles', 'assets/particlesjs-config.json', () => {
 
 //NAVBAR
 
-const navbar_wp = new Waypoint({
-    element: elements.navbar,
-    handler: function (direction) {
-        if (direction == 'up') {
-            this.element.classList.remove('navbar--sticky');
-            elements.section_about.style.marginTop = `0px`;
-        } else {
-            this.element.classList.add('navbar--sticky');
-            elements.section_about.style.marginTop = `60px`;
-        }
-    }
-});
-
-elements.sections.forEach(function (sec) {
+function navbar_wp() {
     new Waypoint({
-        element: sec,
-        handler: function (dir) {
-            const prevWp = this.previous();
-
-            if (dir == 'down') {
-                if (prevWp) {
-                    document.querySelector(`[data-section="#${prevWp.element.id}"]`).classList.remove('navbar__item--active');
-                }
-                document.querySelector(`[data-section="#${this.element.id}"]`).classList.add('navbar__item--active');
+        element: elements.navbar,
+        handler: function (direction) {
+            if (direction == 'up') {
+                this.element.classList.remove('navbar--sticky');
+                elements.section_about.style.marginTop = `0px`;
             } else {
-                console.log(dir);
-                document.querySelector(`[data-section="#${this.element.id}"]`).classList.remove('navbar__item--active');
-                if (prevWp) {
-                    document.querySelector(`[data-section="#${prevWp.element.id}"]`).classList.add('navbar__item--active');
-                }                
-            }          
-        },
-        group: 'section'
-    })
-});
+                this.element.classList.add('navbar--sticky');
+                elements.section_about.style.marginTop = `60px`;
+            }
+        }
+    });
+}
+
+
+
+function highlightNavbar() {
+    elements.sections.forEach(function (sec) {
+        new Waypoint({
+            element: sec,
+            handler: function (dir) {
+                const prevWp = this.previous();
+                console.log(this);
+                if (dir == 'down') {
+                    if (prevWp) {
+                        document.querySelector(`[data-section="#${prevWp.element.id}"]`).classList.remove('navbar__item--active');
+                    }
+                    document.querySelector(`[data-section="#${this.element.id}"]`).classList.add('navbar__item--active');
+                } else {
+                    document.querySelector(`[data-section="#${this.element.id}"]`).classList.remove('navbar__item--active');
+                    if (prevWp) {
+                        document.querySelector(`[data-section="#${prevWp.element.id}"]`).classList.add('navbar__item--active');
+                    }
+                }
+            },
+            group: 'section'
+        })
+    });
+}
 
 // ABOUT
 
@@ -97,12 +104,32 @@ projects.list.forEach(project => {
 
 const shuffleProject = new Shuffle(elements.projects_container, {
     itemSelector: '.projects__item',
-    sizer: '.projects__sizer',
-    speed: 700
+    speed: 700,
+    isCentered: true
 });
 
 // BLOG
 
+function blogHandler() {
+    document.querySelectorAll('.blog__post').forEach(post => {
+        post.addEventListener('mouseenter', () => {
+            document.querySelectorAll('.blog__post').forEach(p => {
+                if (p != post) {
+                    p.classList.add('blog__post--fade');
+                }
+            });
+            post.classList.add('blog__post--hover');
+        });
+        post.addEventListener('mouseleave', () => {
+            document.querySelectorAll('.blog__post').forEach(p => {
+                if (p != post) {
+                    p.classList.remove('blog__post--fade');
+                }
+            });
+            post.classList.remove('blog__post--hover');
+        })
+    })
+}
 
 const blogController = async () => {
     const blogs = new Blogs();
@@ -112,6 +139,8 @@ const blogController = async () => {
         blogsView.renderPost(post);
     });
 }
+
+// CONTACTO
 
 /* 
 ----- EVENT HANDLERS (CLICKS) -------------------------------------- 
@@ -124,27 +153,12 @@ window.onbeforeunload = function () {
 
 // Window Loaded
 document.addEventListener('DOMContentLoaded', () => {
+    navbar_wp();
     blogController().then(() => {
-        // Blog handler
-        document.querySelectorAll('.blog__post').forEach(post => {
-            post.addEventListener('mouseenter', () => {
-                document.querySelectorAll('.blog__post').forEach(p => {
-                    if (p != post) {
-                        p.classList.add('blog__post--fade');
-                    }
-                });
-                post.classList.add('blog__post--hover');
-            });
-            post.addEventListener('mouseleave', () => {
-                document.querySelectorAll('.blog__post').forEach(p => {
-                    if (p != post) {
-                        p.classList.remove('blog__post--fade');
-                    }
-                });
-                post.classList.remove('blog__post--hover');
-            })
-        })
+        blogHandler();
+        highlightNavbar();
     });
+
 })
 
 // -- Navigation handlers
@@ -177,6 +191,11 @@ elements.navbar_items.forEach(el => {
     })
 });
 
+elements.navbar_btn.addEventListener('click', function () {
+    this.classList.toggle('navbar__toggler--open');
+    elements.navbar_collapse.classList.toggle('navbar__collapse--open');
+})
+
 // Projects handlers
 
 elements.projects_filters.forEach(fil => {
@@ -201,15 +220,17 @@ elements.contact_form.addEventListener('submit', function (e) {
 
         // Send email
         fetch('https://formspree.io/hello@jotagep.com', {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}!
+            method: 'POST',
+            body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then(() => {
-            alertify.success('Success message');
+            toast.success('Mensaje enviado', 'Contacto', {
+                positionClass: "toast-bottom-right"
+            });
             // Reset form
-            this.reset();
+            e.target.reset();
         })
     };
 });

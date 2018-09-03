@@ -4,6 +4,10 @@
     align-items: center;
     padding: 2.5rem 6rem 2.5rem 0rem;
 
+    @include respond(tab-port) {
+        padding: 2.5rem 0;
+    }
+
     &__bar {
         height: 2.8rem;
         background-color: $color-grey-light;

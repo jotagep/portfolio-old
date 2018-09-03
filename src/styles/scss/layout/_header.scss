@@ -24,6 +24,11 @@
         cursor: pointer;
         z-index: 2;
 
+        @include respond(phone) {
+            top: 2rem;
+            right: 3rem;
+        }
+
         &__btn {
             position: relative;
             width: 3rem;
@@ -84,9 +89,20 @@
             vertical-align: bottom;
             margin-left: 1rem;
             transition: transform .3s ease;
+
+            @include respond(phone-port) {
+                font-size: 2rem;
+            }            
         }
         &:hover i {
             transform: rotate(90deg);
+        }
+
+        @include respond(phone-port) {
+            padding: 1rem 2.5rem;
+            border: 2px solid $color-white;
+            margin-top: 4rem;
+            font-size: 1.6rem;
         }
     }
 }

@@ -1,9 +1,21 @@
 .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    @include respond(tab-land) {
+        padding: 0 3rem;
+    }
+
+    @include respond(phone) {
+        padding: 0;
+    }
 
     &__bar {
         display: flex;
         justify-content: center;
-        flex: 0 0 80%;
+        flex-wrap: wrap;
         height: 5rem;
     }
 
@@ -19,6 +31,15 @@
         border-radius: 5px;
         cursor: pointer;
 
+        @include respond(phone) {
+            padding: 0 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        @include respond(phone-port) {
+            padding: 0 1rem;
+        }
+
         &:hover {
             background-color: $color-primary-light;
             color: $color-grey-dark-2;
@@ -26,6 +47,14 @@
 
         &:not(:last-child) {
             margin-right: 1.5rem;
+
+            @include respond(phone) {
+                margin-right: 1rem;
+            }
+
+            @include respond(phone-port) {
+                margin-right: 0;
+            }
         }
 
         &--active {
@@ -35,23 +64,32 @@
     }
 
     &__container {
-        margin: 0 auto;
         margin-top: 2rem;
         height: auto;
         width: 100%;
     }
 
     &__item {
+        display: flex;
         position: relative;
-        width: 33%;
+        width: 39rem;
         margin-bottom: .2rem;
         height: 30rem;
         overflow: hidden;
         margin-left: .2rem;
 
+        @include respond(tab-port) {
+            width: 49%;
+        }
+
+        @include respond(phone-port) {
+            width: 100%;
+            margin-left: 0;
+        }
 
         & img {
-            height: 100%;
+            object-fit: cover;
+            width: 100%;
         }
 
         &--selected {
@@ -100,9 +138,5 @@
                 opacity: 1;
             }            
         }
-    }
-    
-    &__sizer {
-        width: 8.333%;
     }
 }

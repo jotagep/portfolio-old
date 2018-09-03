@@ -34,6 +34,7 @@
     "particles.js": "^2.0.0",
     "shufflejs": "^5.2.0",
     "smoothscroll": "^0.4.0",
+    "toastr": "^2.1.4",
     "typed.js": "^2.0.9",
     "waypoints": "^4.0.1"
   }

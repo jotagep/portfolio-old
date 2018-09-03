@@ -21,6 +21,10 @@ body {
     &--nav {
         color: $color-grey-dark-2;
     }
+
+    @include respond(phone-port) {
+        font-size: 2.6rem;
+    }
 }
 
 .heading-secondary {
@@ -30,6 +34,10 @@ body {
 
     &--contact {
         color: $color-white;
+    }
+
+    @include respond(phone-port) {
+        font-size: 2.8rem;
     }
 }
 
