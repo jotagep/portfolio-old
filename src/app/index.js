@@ -73,7 +73,6 @@ function highlightNavbar() {
             element: sec,
             handler: function (dir) {
                 const prevWp = this.previous();
-                console.log(this);
                 if (dir == 'down') {
                     if (prevWp) {
                         document.querySelector(`[data-section="#${prevWp.element.id}"]`).classList.remove('navbar__item--active');
