@@ -28,7 +28,7 @@ module.exports = {
         }]
       },
       {
-        test: /\.scss$/,
+        test: /\.(s*)css$/,
         use: [
           // fallback to style-loader in development
           process.env.NODE_ENV == 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -37,9 +37,9 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
         use: [
-          'file-loader'
+          'file-loader',
         ]
       }
     ]
@@ -51,7 +51,7 @@ module.exports = {
       filename: "./index.html"
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css"
+      filename: "[name].css",
     }),
     new CopyWebpackPlugin([{
       from: './src/public/assets/',

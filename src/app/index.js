@@ -5,6 +5,9 @@ import 'waypoints/lib/noframework.waypoints';
 import smoothScroll from 'smoothscroll';
 import toast from 'toastr';
 import Shuffle from 'shufflejs';
+import {
+    tns
+} from "tiny-slider/src/tiny-slider";
 
 import "@babel/polyfill";
 
@@ -16,6 +19,7 @@ import {
 // Styles 
 import '../styles/scss/main.scss';
 import 'toastr/toastr.scss';
+import 'tiny-slider/src/tiny-slider.scss';
 
 //Models
 import Projects from './models/Projects';
@@ -25,6 +29,10 @@ import Blogs from './models/Blogs';
 import * as projectsView from './views/projectsView';
 import * as blogsView from './views/blogsView';
 
+
+// STATE
+
+const state = {};
 
 // NAVIGATION 
 
@@ -66,7 +74,6 @@ function navbar_wp() {
 }
 
 
-
 function highlightNavbar() {
     elements.sections.forEach(function (sec) {
         new Waypoint({
@@ -95,17 +102,35 @@ function highlightNavbar() {
 
 // PROJECTS
 
-const projects = new Projects();
+const projectCtrl = () => {
+    state.projects = new Projects();
 
-projects.list.forEach(project => {
-    projectsView.renderProject(project);
-});
+    state.projects.list.forEach((project, i) => {
+        projectsView.renderProject(project, i);
+    });
 
-const shuffleProject = new Shuffle(elements.projects_container, {
-    itemSelector: '.projects__item',
-    speed: 700,
-    isCentered: true
-});
+    const shuffleProject = new Shuffle(elements.projects_container, {
+        itemSelector: '.projects__item',
+        speed: 700,
+        isCentered: true
+    });
+
+    elements.projects_filters.forEach(fil => {
+        fil.addEventListener('click', () => {
+            projectsView.cleanFilter();
+            fil.classList.add('projects__filters--active');
+            shuffleProject.filter(fil.dataset.filter);
+        })
+    })
+
+    document.querySelectorAll('.projects__item').forEach(item => {
+        item.addEventListener('click', () => {
+            openModal(item.dataset.ind);
+            elements.modal.classList.add('modal--open');
+        })
+    });
+}
+
 
 // BLOG
 
@@ -131,18 +156,41 @@ function blogHandler() {
 }
 
 const blogController = async () => {
-    const blogs = new Blogs();
-    await blogs.getBlogs();
+    state.blogs = new Blogs();
+    await state.blogs.getBlogs();
 
-    blogs.posts.forEach(post => {
+    state.blogs.posts.forEach(post => {
         blogsView.renderPost(post);
     });
 }
 
 // CONTACTO
 
+// MODAL-PROJECT CONTROLLER
+
+const openModal = (id) => {
+    projectsView.renderModal(state.projects.list[id]);
+
+    state.slider = tns({
+        container: '.modal__header',
+        items: 1,
+        controls: false,
+        nav: false,
+        mousedrag: true,
+        autoplay: true,
+    });
+    document.querySelector('[data-action="stop"]').style.display = 'none';
+    document.querySelector('.modal__close').addEventListener('click', () => {
+        state.slider.destroy();
+        document.querySelector('.modal__card').remove();
+        elements.modal.classList.remove('modal--open');
+    });
+}
+
+
+
 /* 
------ EVENT HANDLERS (CLICKS) -------------------------------------- 
+----- EVENT HANDLERS (CLICKS) STATIC ELEMENTS -------------------------------------- 
 */
 
 // Window before load
@@ -153,11 +201,19 @@ window.onbeforeunload = function () {
 // Window Loaded
 document.addEventListener('DOMContentLoaded', () => {
     navbar_wp();
+    projectCtrl();
     blogController().then(() => {
         blogHandler();
         highlightNavbar();
     });
 
+})
+
+// -- Modal handlers
+elements.modal_back.addEventListener('click', () => {
+    state.slider.destroy();
+    document.querySelector('.modal__card').remove();
+    elements.modal.classList.remove('modal--open');
 })
 
 // -- Navigation handlers
@@ -193,16 +249,6 @@ elements.navbar_items.forEach(el => {
 elements.navbar_btn.addEventListener('click', function () {
     this.classList.toggle('navbar__toggler--open');
     elements.navbar_collapse.classList.toggle('navbar__collapse--open');
-})
-
-// Projects handlers
-
-elements.projects_filters.forEach(fil => {
-    fil.addEventListener('click', () => {
-        projectsView.cleanFilter();
-        fil.classList.add('projects__filters--active');
-        shuffleProject.filter(fil.dataset.filter);
-    })
 })
 
 // Contact form

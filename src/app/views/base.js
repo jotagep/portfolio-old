@@ -17,4 +17,6 @@ export const elements = {
     blog_container: document.querySelector('.blog__container'),
     contact_form: document.querySelector('#contact-form'),
     topBtn: document.querySelector('.footer__topBtn'),
+    modal: document.querySelector('.modal'),
+    modal_back: document.querySelector('.modal__background')
 }
