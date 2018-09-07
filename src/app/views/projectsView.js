@@ -51,11 +51,11 @@ export const renderModal = (project) => {
                     ${techs}
                 </ul>
                 <div class="modal__links">
-                    ${project.github ? `<a href=${project.github} class="modal__git">
+                    ${project.github ? `<a href=${project.github} class="modal__git"  target="_blank" rel="noopener">
                     Ver codigo <i class="fab fa-github"></i>
                     </a>`:''}
 
-                    ${project.url ? `<a href=${project.url} class="modal__url">
+                    ${project.url ? `<a href=${project.url} class="modal__url" target="_blank" rel="noopener">
                     Ver sitio <i class="fas fa-globe-americas"></i>
                 </a>`:''}
                 </div>

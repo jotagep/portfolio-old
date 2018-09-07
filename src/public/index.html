@@ -2,12 +2,18 @@
 <html lang="es">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="JOTAGEP es el portfolio personal de Jorge G. Palacin"/>
+    <meta name="keywords" content="jotagep, web dev, angular, react, portfolio, javascript, ionic, blog, front end, web"/>
+    <meta name="author" content="Jorge G. Palacin" />
+    <meta name="robots" content="index"/>
+
     <title>JOTAGEP | Front End Developer</title>
     <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
-
+    
     <!-- Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
@@ -60,7 +66,7 @@
                 <p class="modal__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate amet
                     adipisci itaque officiis quos, numquam reprehenderit. Fugiat ipsa pariatur omnis cum modi suscipit,
                     officiis vitae minima impedit deleniti id ut.</p>
-                <ul class="modal__techs">
+                <ul class="modal__techs">  
                     <li>Vanilla JS</li>
                     <li>Firebase</li>
                     <li>CSS3</li>
@@ -103,7 +109,7 @@
         <nav class="navbar" id="navbar">
             <div class="navbar__container">
                 <a href="" class="navbar__brand">
-                    <img src="assets/img/logo.png">
+                    <img src="assets/img/logo.png" alt="Logo">
                     [ jotagep.com ]
                 </a>
                 <button class="navbar__toggler" type="button" id="navbar-btn">
@@ -310,9 +316,9 @@
                     ¿ Tienes algun proyecto en el que podamos trabajor juntos ?
                 </p>
                 <form class="contact__form" id="contact-form">
-                    <input type="text" name="name" placeholder="Nombre" required>
-                    <input type="email" placeholder="tu@email.com" name="email" required>
-                    <textarea name="msg" id="msg" placeholder="Escribe tu mensaje" required></textarea>
+                    <input type="text" name="name" placeholder="Nombre" aria-label="nombre" required>
+                    <input type="email" placeholder="tu@email.com" name="email" aria-label="email" required>
+                    <textarea name="msg" id="msg" placeholder="Escribe tu mensaje" aria-label="mensaje" required></textarea>
                     <input class="contact__submit" type="submit" value="Enviar">
                 </form>
             </div>
@@ -322,16 +328,16 @@
                 <i class="fas fa-angle-double-up"></i>
             </button>
             <div class="footer__social">
-                <a href="https://github.com/jotagep" target="_blank" rel="noopener" class="footer__item">
+                <a href="https://github.com/jotagep" target="_blank" rel="noopener" class="footer__item" aria-label="Github">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/jotagep/" target="_blank" rel="noopener" class="footer__item">
+                <a href="https://www.linkedin.com/in/jotagep/" target="_blank" rel="noopener" class="footer__item" aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://www.instagram.com/jotagep/" target="_blank" rel="noopener" class="footer__item">
+                <a href="https://www.instagram.com/jotagep/" target="_blank" rel="noopener" class="footer__item" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://blog.jotagep.com/" target="_blank" rel="noopener" class="footer__item">
+                <a href="https://blog.jotagep.com/" target="_blank" rel="noopener" class="footer__item" aria-label="Blog">
                     <i class="fab fa-blogger"></i>
                 </a>
             </div>
