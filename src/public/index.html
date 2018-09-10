@@ -12,6 +12,8 @@
     <meta name="author" content="Jorge G. Palacin" />
     <meta name="robots" content="index" />
     <meta name="theme-color" content="#232422" />
+    <!-- Manifest -->
+    <link rel="manifest" href="./assets/manifest.json">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -23,7 +25,7 @@
 
     <title>JOTAGEP | Front End Developer</title>
     <!-- Styles -->
-    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/png">
     <!-- Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
@@ -370,6 +372,17 @@
             </p>
         </footer>
     </main>
+
+    <!-- Register SW -->
+    <script>
+        // Check that service workers are registered
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script>
 </body>
 
 </html>

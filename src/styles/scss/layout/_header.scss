@@ -27,6 +27,11 @@
         cursor: pointer;
         z-index: 2;
 
+        @include respond(phone) {
+            top: 2rem;
+            left: 3rem;
+        }
+
         &:hover {
             border: thin solid $color-primary;
             background-color: $color-primary;

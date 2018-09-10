@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const {GenerateSW} = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: ["@babel/polyfill",'./src/app/index.js'],
@@ -56,6 +57,11 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: './src/public/assets/',
       to: 'assets/'
-    }])
+    }]),
+    new GenerateSW({
+      swDest: 'sw.js',
+      skipWaiting: true,
+      clientsClaim: true
+    })
   ]
 };
