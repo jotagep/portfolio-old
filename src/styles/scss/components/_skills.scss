@@ -39,7 +39,8 @@
 
         &-fill {
             height: 100%;
-            flex: 0 0 80%;
+            flex: 1;
+            transform: scaleX(0);
             background-color: $color-secondary;
         }
 

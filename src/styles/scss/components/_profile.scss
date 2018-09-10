@@ -3,14 +3,47 @@
     flex-direction: column;
     align-items: center;
     padding: 2.5rem 6rem;
-    
+
     &__header {
-        background-color: #eee;
+        position: relative;
         height: 23rem;
         width: 23rem;
+    }
+    
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        border: 6px solid $color-secondary;
         border-radius: 50%;
+        transition: all .6s ease;
+        backface-visibility: hidden;
+        box-shadow: inset 0px 0px 6px 10px rgba(0,0,0,.3);
+
+        &--front {
+            background: url('/assets/img/foto_profile.png') no-repeat;
+            background-position: center center;
+            background-size: contain;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+            background: url('/assets/img/foto_profile-back.png') no-repeat;
+            background-position: center center;
+            background-size: contain;
+        }
     }
 
+    &__header:hover &__content--front {
+        transform: rotateY(-180deg);
+    }
+
+    &__header:hover &__content--back {
+        transform: rotateY(0deg);
+    }
 
     &__body {
         margin-top: 2rem;
@@ -25,5 +58,9 @@
 
     &__text {
         text-align: center;
+
+        & a {
+            color: $color-secondary-dark;
+        }
     }
 }

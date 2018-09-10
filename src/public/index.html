@@ -2,24 +2,38 @@
 <html lang="es">
 
 <head>
+
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="JOTAGEP es el portfolio personal de Jorge G. Palacin"/>
-    <meta name="keywords" content="jotagep, web dev, angular, react, portfolio, javascript, ionic, blog, front end, web"/>
+    <meta name="description" content="JOTAGEP es el portfolio personal de Jorge G. Palacin" />
+    <meta name="keywords" content="jotagep, web dev, angular, react, portfolio, javascript, ionic, blog, front end, web" />
     <meta name="author" content="Jorge G. Palacin" />
-    <meta name="robots" content="index"/>
+    <meta name="robots" content="index" />
+    <meta name="theme-color" content="#232422" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NNKCTM5');</script>
+    <!-- End Google Tag Manager -->
 
     <title>JOTAGEP | Front End Developer</title>
+    <!-- Styles -->
     <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
-    
     <!-- Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNKCTM5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- Modal Navigation -->
     <div class="navigation">
         <button class="navigation__close" aria-label="Menu">
@@ -50,7 +64,7 @@
     <!-- Modal Project -->
     <div class="modal">
         <div class="modal__background"></div>
-<!-- 
+        <!-- 
         <div class="modal__card">
             <div class="modal__header">
                 <img src="assets/img/shap.png" alt="">
@@ -84,6 +98,9 @@
     </div>
 
     <header class="header">
+        <a href="https://blog.jotagep.com/" target="_blank" rel="noopener" class="header__blog">
+            Blog
+        </a>
         <button class="header__menu" aria-label="Menu">
             <span class="header__menu__btn"></span>
         </button>
@@ -144,10 +161,10 @@
                             <i class="fab fa-audible"></i>
                         </div>
                         <div class="card__body">
-                            <h3 class="card__title heading-tertiary">Good Perfomance</h3>
+                            <h3 class="card__title heading-tertiary">Rendimiento óptimo</h3>
                             <div class="card__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim,
-                                non interdum massa cursus
+                                Gracias al uso de Service Workers optimizamos el rendimientos y disminuimos los tiempos
+                                de carga, incluso offline.
                             </div>
                         </div>
                     </div>
@@ -158,10 +175,10 @@
                             <i class="fas fa-laptop"></i>
                         </div>
                         <div class="card__body">
-                            <h3 class="card__title heading-tertiary">Responsive Design</h3>
+                            <h3 class="card__title heading-tertiary">Diseño adaptable</h3>
                             <div class="card__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim,
-                                non interdum massa cursus
+                                Diseñamos aplicaciónes web completamente adaptables a tablets, moviles o cualquier
+                                dispositivo.
                             </div>
                         </div>
                     </div>
@@ -172,10 +189,10 @@
                             <i class="fas fa-map-signs"></i>
                         </div>
                         <div class="card__body">
-                            <h3 class="card__title heading-tertiary">Dynamic Data</h3>
+                            <h3 class="card__title heading-tertiary">Datos dinámicos</h3>
                             <div class="card__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim,
-                                non interdum massa cursus
+                                ¿Por que usar un sitio éstatico? Implementamos sitios web dinámicos para que los datos
+                                fluyan en ambos sentidos
                             </div>
                         </div>
                     </div>
@@ -184,12 +201,16 @@
             <div class="row">
                 <div class="col-1-of-2">
                     <div class="profile">
-                        <div class="profile__header"></div>
+                        <div class="profile__header">
+                            <div class="profile__content profile__content--front"></div>
+                            <div class="profile__content profile__content--back"></div>
+                        </div>
                         <div class="profile__body">
-                            <h3 class="profile__title heading-tertiary">Who is this 👨‍💻 ?</h3>
+                            <h3 class="profile__title heading-tertiary">Quien es este 👨‍💻 ?</h3>
                             <div class="profile__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim,
-                                non interdum massa cursus Sed tincidunt tristique enim, non interdum massa cursus
+                                Soy Front-End developer en Barcelona.<br>
+                                Me considero un apasionado de JavaScript y todo lo que rodea el desarrollo web.<br>
+                                <a href="https://twitter.com/Sir_JotaG" target="_blank" rel="noopener">@Sir_JotaG</a>
                             </div>
                         </div>
                     </div>
@@ -198,56 +219,56 @@
                     <div class="skills">
                         <div class="skills__bar">
                             <span class="skills__label">CSS</span>
-                            <div class="skills__contain" data-fill="80%">
-                                <div class="skills__contain-fill"></div>
+                            <div class="skills__contain" data-fill="85%">
+
                             </div>
                         </div>
                         <div class="skills__bar">
                             <span class="skills__label">HTML</span>
-                            <div class="skills__contain" data-fill="80%">
-                                <div class="skills__contain-fill"></div>
+                            <div class="skills__contain" data-fill="90%">
+
                             </div>
                         </div>
                         <div class="skills__bar">
                             <span class="skills__label">JavaScript</span>
-                            <div class="skills__contain" data-fill="80%">
-                                <div class="skills__contain-fill"></div>
+                            <div class="skills__contain" data-fill="85%">
+
                             </div>
                         </div>
                         <div class="skills__bar">
                             <span class="skills__label">Angular</span>
                             <div class="skills__contain" data-fill="80%">
-                                <div class="skills__contain-fill"></div>
+
                             </div>
                         </div>
                         <div class="skills__bar">
                             <span class="skills__label">React</span>
-                            <div class="skills__contain" data-fill="80%">
-                                <div class="skills__contain-fill"></div>
+                            <div class="skills__contain" data-fill="70%">
+
                             </div>
                         </div>
                         <div class="skills__bar">
                             <span class="skills__label">Node</span>
-                            <div class="skills__contain" data-fill="80%">
-                                <div class="skills__contain-fill"></div>
+                            <div class="skills__contain" data-fill="70%">
+
                             </div>
                         </div>
                         <div class="skills__bar">
                             <span class="skills__label">Ionic</span>
                             <div class="skills__contain" data-fill="80%">
-                                <div class="skills__contain-fill"></div>
+
                             </div>
                         </div>
                         <div class="skills__bar">
                             <span class="skills__label">Git</span>
                             <div class="skills__contain" data-fill="80%">
-                                <div class="skills__contain-fill"></div>
+
                             </div>
                         </div>
                         <div class="skills__bar">
                             <span class="skills__label">Design Tools</span>
-                            <div class="skills__contain" data-fill="80%">
-                                <div class="skills__contain-fill"></div>
+                            <div class="skills__contain" data-fill="75%">
+
                             </div>
                         </div>
                     </div>
@@ -305,7 +326,8 @@
                     </div>
                 </div> -->
             </div>
-            <a href="https://blog.jotagep.com/" class="blog__btn" role="button" target="_blank" rel="noopener">Visit
+            <a href="https://blog.jotagep.com/" class="blog__btn" role="button" target="_blank" rel="noopener">Visita
+                mi
                 blog</a>
         </section>
         <section class="section section-contact" id="section-contact">
@@ -331,14 +353,16 @@
                 <a href="https://github.com/jotagep" target="_blank" rel="noopener" class="footer__item" aria-label="Github">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/jotagep/" target="_blank" rel="noopener" class="footer__item" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/jotagep/" target="_blank" rel="noopener" class="footer__item"
+                    aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://www.instagram.com/jotagep/" target="_blank" rel="noopener" class="footer__item" aria-label="Instagram">
+                <a href="https://www.instagram.com/jotagep/" target="_blank" rel="noopener" class="footer__item"
+                    aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://blog.jotagep.com/" target="_blank" rel="noopener" class="footer__item" aria-label="Blog">
-                    <i class="fab fa-blogger"></i>
+                <a href="https://twitter.com/Sir_JotaG" target="_blank" rel="noopener" class="footer__item" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
                 </a>
             </div>
             <p class="footer__text">

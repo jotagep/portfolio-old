@@ -1,6 +1,7 @@
 //JS scripts
 import Typed from 'typed.js';
 import 'particles.js';
+import ProgressBar from 'progressbar.js';
 import 'waypoints/lib/noframework.waypoints';
 import smoothScroll from 'smoothscroll';
 import toast from 'toastr';
@@ -99,6 +100,29 @@ function highlightNavbar() {
 
 // ABOUT
 
+function skills_wp () {
+    new Waypoint({
+        element: document.querySelector('.skills'),
+        handler: function () {
+            if (!state.loaded) {
+                document.querySelectorAll('.skills__contain').forEach( (el, i) => {
+                    const fill = parseFloat(el.dataset.fill) / 100.0;
+                    const bar = new ProgressBar.Line(el, {
+                        color: '#2AA9D2',
+                        easing: 'easeInOut',
+                        duration: 1000,
+                    });
+                    setTimeout(() => {
+                        bar.animate(fill);
+                    }, i*150) 
+                });
+                state.loaded = true;
+            }
+        },
+        offset: '45%'
+    })
+}
+
 
 // PROJECTS
 
@@ -181,9 +205,9 @@ const openModal = (id) => {
     });
     document.querySelector('[data-action="stop"]').style.display = 'none';
     document.querySelector('.modal__close').addEventListener('click', () => {
-        state.slider.destroy();
-        document.querySelector('.modal__card').remove();
         elements.modal.classList.remove('modal--open');
+        document.querySelector('.modal__card').remove();
+        state.slider.destroy();
     });
 }
 
@@ -201,6 +225,7 @@ window.onbeforeunload = function () {
 // Window Loaded
 document.addEventListener('DOMContentLoaded', () => {
     navbar_wp();
+    skills_wp();
     projectCtrl();
     blogController().then(() => {
         blogHandler();
@@ -211,9 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // -- Modal handlers
 elements.modal_back.addEventListener('click', () => {
-    state.slider.destroy();
-    document.querySelector('.modal__card').remove();
     elements.modal.classList.remove('modal--open');
+    document.querySelector('.modal__card').remove();
+    state.slider.destroy();
 })
 
 // -- Navigation handlers

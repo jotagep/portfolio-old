@@ -24,11 +24,18 @@
     &__card {
         position: absolute;
         display: flex;
-        flex-direction:column; 
+        flex-direction: column;
         border-radius: .5rem;
         width: 80%;
         max-width: 50rem;
         background-color: $color-grey-light;
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation: landscape) {
+            flex-direction: row;
+            max-width: 75%;
+            width: auto;
+            height: 50%;
+        }
     }
 
     &__close {
@@ -49,11 +56,16 @@
     &__header {
         width: 100%;
         overflow: hidden;
-        flex: 0 1 auto;
+        flex: 0 0 auto;
 
-        & > img {
+        &>img {
             width: 100%;
             object-fit: cover;
+
+            @media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation: landscape) {
+                width: auto;
+                height: 100%;
+            }
         }
     }
 
@@ -65,7 +77,7 @@
         padding: 3rem 3rem 4rem;
         height: 100%;
 
-        & hr{
+        & hr {
             margin-bottom: 2rem;
         }
     }
@@ -108,8 +120,7 @@
         background-color: $color-grey-dark-2;
         color: $color-grey-light;
 
-
-        & i{
+        & i {
             margin-left: 1rem;
             transition: all .3s;
         }
@@ -125,7 +136,7 @@
         background-color: #c4302b;
         color: $color-white;
 
-        & i{
+        & i {
             margin-left: 1rem;
             transition: all .3s;
         }
@@ -135,4 +146,3 @@
         }
     }
 }
-
