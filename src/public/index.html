@@ -111,8 +111,7 @@
             <h1 class="heading-primary heading-primary--main">
                 Hola, soy 
                 <span class="heading-primary heading-primary--highlight">
-                    {
-                    <span id="jotagep"></span> }</span>.
+                    { <span id="jotagep"></span> }</span>.
             </h1>
             <h1 class="heading-primary heading-primary--main">
                 Front end web developer.
@@ -127,10 +126,7 @@
     <main>
         <nav class="navbar" id="navbar">
             <div class="navbar__container">
-                <a href="" class="navbar__brand">
-                    <img src="assets/img/logo.png" alt="Logo">
-                    { jotagep.com }
-                </a>
+                <a href="" class="navbar__brand"> <img src="assets/img/logo.png" alt="Logo">{ jotagep.com }</a>
                 <button class="navbar__toggler" type="button" id="navbar-btn">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -154,7 +150,7 @@
         </nav>
 
         <section class="section section-about" id="section-about">
-            <h2 class="heading-secondary">Sobre mi</h2>
+            <h2 class="heading-secondary">Sobre mí</h2>
             <span class="header-bar"></span>
             <div class="row">
                 <div class="col-1-of-3">
@@ -208,7 +204,7 @@
                             <div class="profile__content profile__content--back"></div>
                         </div>
                         <div class="profile__body">
-                            <h3 class="profile__title heading-tertiary">Quien es este 👨‍💻 ?</h3>
+                            <h3 class="profile__title heading-tertiary">Quién es este 👨‍💻 ?</h3>
                             <div class="profile__text">
                                 Soy Front-End developer en Barcelona.<br>
                                 Me considero un apasionado de JavaScript y todo lo que rodea el desarrollo web.<br>
@@ -382,6 +378,14 @@
                 navigator.serviceWorker.register('/sw.js');
             });
         }
+    </script>
+    <script type="text/javascript" 
+    src="https://blog.jotagep.com/public/ghost-sdk.min.js"> </script>
+    <script type="text/javascript">
+    ghost.init({
+      clientId: "ghost-frontend",
+      clientSecret: "b5fec795988f"
+     });
     </script>
 </body>
 

@@ -7,7 +7,7 @@ export default class Blogs {
 
     async getBlogs() {
         try {
-            const res = await fetch(`${url_api}?limit=3&client_id=${client_id}&client_secret=${client_secret}`)
+            const res = await fetch(ghost.url.api('posts', {limit: 3}))
                 .then(res => res.json());
             
             this.posts = res.posts;

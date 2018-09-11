@@ -7,7 +7,7 @@
     "background_color": "#F7F7F7",
     "display": "standalone",
     "orientation": "portrait",
-    "start_url": "./index.html",
+    "start_url": "../index.html",
     "icons": [
       {
         "src": "./logo/logo_1.png",
