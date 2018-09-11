@@ -16,6 +16,10 @@
     }
 
     @include respond(tab-port) {
+        &:not(:last-child) {
+            margin-bottom: 0;
+        }
+
         max-width: 60rem;
         margin-bottom: $gutter-vertical-small;
     }
@@ -32,6 +36,10 @@
         }
 
         @include respond(tab-port) {
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+
             width: 100% !important;
         }
     }

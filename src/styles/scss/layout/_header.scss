@@ -101,7 +101,7 @@
         padding: 1.5em 4rem;
         border: 3px solid $color-white;
         background-color: transparent;
-        font-family: 'Montserrat', sans-serif;
+        font-family: $lato-font;
         font-size: 1.8rem;
         color: $color-white;
         transition: all .3s ease;
@@ -112,7 +112,7 @@
             border: 3px solid $color-primary;
         }
         & i {
-            font-size: 2.6rem;
+            font-size: 2.2rem;
             vertical-align: bottom;
             margin-left: 1rem;
             transition: transform .3s ease;

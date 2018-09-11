@@ -29,13 +29,6 @@
         width: 80%;
         max-width: 60rem;
         background-color: $color-grey-light;
-
-        @media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation: landscape) {
-            flex-direction: row;
-            max-width: 75%;
-            width: auto;
-            height: 50%;
-        }
     }
 
     &__close {
