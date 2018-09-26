@@ -139,4 +139,17 @@
             }            
         }
     }
+
+    &__btn {
+        margin-top: 4rem;
+        padding: 2rem 4rem;
+        border: thin solid $color-grey;
+        border-radius: 20px;
+        transition: all .3s; 
+
+        &:hover {
+            box-shadow: 0 .5rem 2rem rgba(0, 0, 0, .1);
+            transform: translateY(-.5rem);
+        }
+    }
 }

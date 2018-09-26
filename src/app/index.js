@@ -158,35 +158,35 @@ const projectCtrl = () => {
 
 // BLOG
 
-function blogHandler() {
-    document.querySelectorAll('.blog__post').forEach(post => {
-        post.addEventListener('mouseenter', () => {
-            document.querySelectorAll('.blog__post').forEach(p => {
-                if (p != post) {
-                    p.classList.add('blog__post--fade');
-                }
-            });
-            post.classList.add('blog__post--hover');
-        });
-        post.addEventListener('mouseleave', () => {
-            document.querySelectorAll('.blog__post').forEach(p => {
-                if (p != post) {
-                    p.classList.remove('blog__post--fade');
-                }
-            });
-            post.classList.remove('blog__post--hover');
-        })
-    })
-}
+// function blogHandler() {
+//     document.querySelectorAll('.blog__post').forEach(post => {
+//         post.addEventListener('mouseenter', () => {
+//             document.querySelectorAll('.blog__post').forEach(p => {
+//                 if (p != post) {
+//                     p.classList.add('blog__post--fade');
+//                 }
+//             });
+//             post.classList.add('blog__post--hover');
+//         });
+//         post.addEventListener('mouseleave', () => {
+//             document.querySelectorAll('.blog__post').forEach(p => {
+//                 if (p != post) {
+//                     p.classList.remove('blog__post--fade');
+//                 }
+//             });
+//             post.classList.remove('blog__post--hover');
+//         })
+//     })
+// }
 
-const blogController = async () => {
-    state.blogs = new Blogs();
-    await state.blogs.getBlogs();
+// const blogController = async () => {
+//     state.blogs = new Blogs();
+//     await state.blogs.getBlogs();
 
-    state.blogs.posts.forEach(post => {
-        blogsView.renderPost(post);
-    });
-}
+//     state.blogs.posts.forEach(post => {
+//         blogsView.renderPost(post);
+//     });
+// }
 
 // CONTACTO
 
@@ -227,11 +227,11 @@ document.addEventListener('DOMContentLoaded', () => {
     navbar_wp();
     skills_wp();
     projectCtrl();
-    blogController().then(() => {
-        blogHandler();
-        highlightNavbar();
-    });
-
+    highlightNavbar();
+    // blogController().then(() => {
+    //     blogHandler();
+    //     highlightNavbar();
+    // });
 })
 
 // -- Modal handlers
@@ -267,7 +267,9 @@ elements.header_btn.addEventListener('click', () => {
 
 elements.navbar_items.forEach(el => {
     el.addEventListener('click', () => {
-        smoothScroll(document.querySelector(`${el.dataset.section}`), 1200);
+        if (el.dataset.section != '#section-blog') {
+            smoothScroll(document.querySelector(`${el.dataset.section}`), 1200);
+        }
         document.querySelector('.navbar__toggler').classList.remove('navbar__toggler--open');
         elements.navbar_collapse.classList.remove('navbar__collapse--open');
     })
