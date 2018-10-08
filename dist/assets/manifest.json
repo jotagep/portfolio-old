@@ -1,0 +1,28 @@
+{ 
+    "lang": "es",
+    "name": "JOTAGEP | Portfolio",
+    "short_name": "JOTAGEP",
+    "description": "Profesional portfolio by JOTAGEP",
+    "theme_color": "#232422",
+    "background_color": "#F7F7F7",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "../index.html",
+    "icons": [
+      {
+        "src": "./logo/logo_1.png",
+        "type": "image/png",
+        "sizes": "48x48"
+      },
+      {
+        "src": "./logo/logo_2.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "./logo/logo_3.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }

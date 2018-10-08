@@ -268,7 +268,9 @@ elements.header_btn.addEventListener('click', () => {
 
 elements.navbar_items.forEach(el => {
     el.addEventListener('click', () => {
-        smoothScroll(document.querySelector(`${el.dataset.section}`), 1200);
+        if (el.dataset.section != '#section-blog') {
+            smoothScroll(document.querySelector(`${el.dataset.section}`), 1200);
+        }
         document.querySelector('.navbar__toggler').classList.remove('navbar__toggler--open');
         elements.navbar_collapse.classList.remove('navbar__collapse--open');
     })
