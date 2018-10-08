@@ -87,6 +87,7 @@ function highlightNavbar() {
                     }
                     document.querySelector(`[data-section="#${this.element.id}"]`).classList.add('navbar__item--active');
                 } else {
+                    console.log(this.element.id);
                     document.querySelector(`[data-section="#${this.element.id}"]`).classList.remove('navbar__item--active');
                     if (prevWp) {
                         document.querySelector(`[data-section="#${prevWp.element.id}"]`).classList.add('navbar__item--active');
@@ -101,12 +102,12 @@ function highlightNavbar() {
 
 // ABOUT
 
-function skills_wp () {
+function skills_wp() {
     new Waypoint({
         element: document.querySelector('.skills'),
         handler: function () {
             if (!state.loaded) {
-                document.querySelectorAll('.skills__contain').forEach( (el, i) => {
+                document.querySelectorAll('.skills__contain').forEach((el, i) => {
                     const fill = parseFloat(el.dataset.fill) / 100.0;
                     const bar = new ProgressBar.Line(el, {
                         color: '#2AA9D2',
@@ -115,7 +116,7 @@ function skills_wp () {
                     });
                     setTimeout(() => {
                         bar.animate(fill);
-                    }, i*150) 
+                    }, i * 150)
                 });
                 state.loaded = true;
             }
@@ -228,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navbar_wp();
     skills_wp();
     projectCtrl();
-    highlightNavbar();
     blogController().then(() => {
         blogHandler();
         highlightNavbar();
@@ -268,9 +268,7 @@ elements.header_btn.addEventListener('click', () => {
 
 elements.navbar_items.forEach(el => {
     el.addEventListener('click', () => {
-        if (el.dataset.section != '#section-blog') {
-            smoothScroll(document.querySelector(`${el.dataset.section}`), 1200);
-        }
+        smoothScroll(document.querySelector(`${el.dataset.section}`), 1200);
         document.querySelector('.navbar__toggler').classList.remove('navbar__toggler--open');
         elements.navbar_collapse.classList.remove('navbar__collapse--open');
     })
