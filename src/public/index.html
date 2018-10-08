@@ -12,6 +12,7 @@
     <meta name="author" content="Jorge G. Palacin" />
     <meta name="robots" content="index" />
     <meta name="theme-color" content="#232422" />
+    <meta name="msapplication-TileColor" content="#ffc40d">
     <!-- Manifest -->
     <link rel="manifest" href="./assets/manifest.json">
 
@@ -25,7 +26,10 @@
 
     <title>JOTAGEP | Front End Developer</title>
     <!-- Styles -->
-    <link rel="shortcut icon" href="./assets/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#b7b7b7">
     <!-- Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
@@ -302,38 +306,26 @@
                     </figure> -->
                 </div>
             </div>
+            <a href="https://github.com/jotagep" class="projects__btn" role="button" target="_blank" rel="noopener">
+                Visita mi Github</a>
         </section>
         <section class="section section-blog" id="section-blog">
             <h2 class="heading-secondary">Blog</h2>
             <span class="header-bar"></span>
             <div class="row blog__container">
-                <!-- <div class="col-1-of-3">
-                    <div class="blog__post">
-                        <img src="assets/img/shap.png" alt="Shap" class="blog__header">
-                        <div class="blog__body">
-                            <h2 class="blog__title">Title Post</h2>
-                            <span class="blog__date">Fecha</span>
-                            <span class="blog__bar">&nbsp;</span>
-                            <p class="blog__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tristique enim,
-                                non interdum… massa cursus vel. Sed quis lorem id nulla tincidunt iaculis at id dolor.
-                                Nulla ultrices vulputate neque, vel aliquam nulla dictum ut. Vivamus posuere at lacus
-                                sed dapibus. Etiam pulvinar nisi a nunc lacinia,
-                            </p>
-                        </div>
-                    </div>
-                </div> -->
+
             </div>
             <a href="https://blog.jotagep.com/" class="blog__btn" role="button" target="_blank" rel="noopener">Visita
                 mi
                 blog</a>
         </section>
+
         <section class="section section-contact" id="section-contact">
             <h2 class="heading-secondary heading-secondary--contact">Contacto</h2>
             <span class="header-bar header-bar--contact"></span>
             <div class="contact">
                 <p class="contact__text">
-                    ¿ Tienes algun proyecto en el que podamos trabajor juntos ?
+                    ¿ Tienes algún proyecto en el que podamos trabajar juntos ?
                 </p>
                 <form class="contact__form" id="contact-form">
                     <input type="text" name="name" placeholder="Nombre" aria-label="nombre" required>
@@ -379,13 +371,12 @@
             });
         }
     </script>
-    <script type="text/javascript" 
-    src="https://blog.jotagep.com/public/ghost-sdk.min.js"> </script>
+    <script type="text/javascript" src="https://blog.jotagep.com/public/ghost-sdk.min.js"> </script>
     <script type="text/javascript">
-    ghost.init({
-      clientId: "ghost-frontend",
-      clientSecret: "b5fec795988f"
-     });
+        ghost.init({
+            clientId: "ghost-frontend",
+            clientSecret: "b5fec795988f"
+        });
     </script>
 </body>
 

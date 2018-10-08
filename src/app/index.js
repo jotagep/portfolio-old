@@ -93,7 +93,8 @@ function highlightNavbar() {
                     }
                 }
             },
-            group: 'section'
+            group: 'section',
+            offset: 100
         })
     });
 }
@@ -227,11 +228,11 @@ document.addEventListener('DOMContentLoaded', () => {
     navbar_wp();
     skills_wp();
     projectCtrl();
+    highlightNavbar();
     blogController().then(() => {
         blogHandler();
         highlightNavbar();
     });
-
 })
 
 // -- Modal handlers

@@ -19,6 +19,18 @@
 
     &-projects {
         background-color: $color-grey-light;
+        z-index: 2;
+        @supports (clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%)) or (-webkit-clip-path: polygon(0 0)) {
+            clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+
+            @include respond(tab-port) {
+                clip-path: polygon(0 0, 100% 0, 100% 98%, 50% 100%, 0 98%);
+            }
+
+            @include respond(phone-port) {
+                clip-path: polygon(0 0, 100% 0, 100% 99%, 50% 100%, 0 99%);
+            }
+        }
     }
 
     &-blog {
@@ -42,7 +54,7 @@
         z-index: 1;
         color: $color-white;
         padding: 13rem 0 11rem;
-        margin-top: -5rem;
+        margin-top: -7rem;
 
         @include respond(tab-port) {
             margin-top: -4rem;

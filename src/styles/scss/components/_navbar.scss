@@ -30,6 +30,7 @@
     &__brand {
         padding: 1rem 0;
         display: flex;
+        white-space: nowrap;
         height: 100%;
         font-size: 1.7rem;
         color: $color-primary;
@@ -99,7 +100,7 @@
 
     &__item {
         height: 100%;
-        padding: 0 1.5rem;
+
         color: $color-white;
         font-family: $raleway-font;
         transition: all .3s;
@@ -107,7 +108,6 @@
 
         @include respond(phone) {
             height: auto;
-            padding: 1.5rem 2.5rem;
             border-bottom: thin solid $color-grey;
         }
 
@@ -123,6 +123,7 @@
     }
 
     &__link {
+        padding: 0 1.5rem;
         display: flex;
         align-items: center;
         height: 100%;
@@ -130,5 +131,9 @@
         color: inherit;
         font-size: 1.4rem;
         font-weight: 300;
+
+        @include respond(phone) {
+            padding: 1.5rem 2.5rem;
+        }
     }
 }

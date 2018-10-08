@@ -1,6 +1,8 @@
 
 # Created by https://www.gitignore.io/api/git,node,sass,visualstudiocode
 
+dist/
+
 ### Git ###
 *.orig
 
