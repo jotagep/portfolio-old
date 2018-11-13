@@ -44,18 +44,22 @@ const closeNav = () => {
 
 // HEADER 
 
-const typed = new Typed('#jotagep', {
-    showCursor: false,
-    typeSpeed: 40,
-    backSpeed: 40,
-    loop: true,
-    backDelay: 5000,
-    strings: ['jotagep', 'Jorge G. Palacin']
-});
+function header_perf() {
+    
+    particlesJS.load('particles', 'assets/particlesjs-config.json', () => {
+        console.log('Particle JS - loaded');
+    });
 
-particlesJS.load('particles', 'assets/particlesjs-config.json', () => {
-    console.log('Particle JS - loaded');
-})
+    const typed = new Typed('#jotagep', {
+        showCursor: false,
+        typeSpeed: 40,
+        backSpeed: 40,
+        loop: true,
+        backDelay: 5000,
+        strings: ['jotagep', 'Jorge G. Palacin']
+    });   
+}
+
 
 //NAVBAR
 
@@ -226,6 +230,7 @@ window.onbeforeunload = function () {
 
 // Window Loaded
 document.addEventListener('DOMContentLoaded', () => {
+    header_perf();
     navbar_wp();
     skills_wp();
     projectCtrl();
