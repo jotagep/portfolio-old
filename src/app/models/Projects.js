@@ -22,6 +22,17 @@ export default class Projects {
                 github: 'https://github.com/jotagep/mws-restaurant-udacity'
             },
             {
+                title: 'Pixel Drawer',
+                brief: 'React 16.6',
+                description: 'Esta aplicación nos permite hacer pixel art de la manera más sencilla e intuitiva posible. Cambia el grid a tu gusto y descarga tu dibujo final',
+                techs: ['React', 'Javascript', 'CSS3'],
+                imgs: ['assets/img/projects/react_pixel_1.png', 'assets/img/projects/react_pixel_2.png'],
+                thumb: 'assets/img/projects/react_pixel.png',
+                tags: ['REACT'],
+                github: 'https://github.com/jotagep/PixelDrawer',
+                url: 'https://jotagep.github.io/PixelDrawer/'
+            },
+            {
                 title: 'ChatBase',
                 brief: 'Angular + Firebase',
                 description: 'Un <b>chat</b> completo en tiempo real. También tiene sistema de registro y login gestionado por la autentificación de <b>Firebase</b>',
@@ -51,17 +62,7 @@ export default class Projects {
                 thumb: 'assets/img/projects/esport.png',
                 tags: ['JS'],
                 url: 'http://www.emanagementsport.com/'
-            },
-            {
-                title: 'QR-App',
-                brief: 'Ionic + Cordova',
-                description: 'Una aplicación que a traves de la cámara del móvil escanea códigos QR. Permite mapas, url, etc',
-                techs: ['Ionic 2', 'Cordova'],
-                imgs: ['assets/img/projects/qrapp_1.png', 'assets/img/projects/qrapp_2.png'],
-                thumb: 'assets/img/projects/qrapp.png',
-                tags: ['IONIC'],
-                github: 'https://github.com/jotagep/QR-App'
-            },
+            }
         ]
     }
 }
