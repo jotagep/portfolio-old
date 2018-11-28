@@ -63,4 +63,21 @@
             color: $color-secondary-dark;
         }
     }
+
+    &__btn {
+        margin-top: 1rem;
+        padding: 2rem 4rem;
+        border: thin solid $color-grey;
+        border-radius: 20px;
+        transition: all .3s; 
+
+        &:hover {
+            box-shadow: 0 .5rem 2rem rgba(0, 0, 0, .1);
+            transform: translateY(-.5rem);
+        }
+
+        i {
+            margin-left: 1rem;
+        }
+    }
 }
